@@ -1,0 +1,26 @@
+#container{
+	max-height: 100vh;
+	max-width: 100vw;
+}
+#room,#devices{
+
+	border:1px solid red;
+	text-align:center;
+}
+#room{
+	height: 70vh;
+
+}
+#devices{
+	height: 20vh;
+}
+.device{
+	border-radius: 4px;
+	height:3em;
+	width: 2em;
+	border : 2px solid grey;
+	display: inline-block;
+}
+.device{
+	position: absolute;
+}
