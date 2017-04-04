@@ -1,7 +1,10 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"	rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
@@ -16,15 +19,41 @@
 			<div class="col-md-8">
 				<div id="room" ondragover="dragging(event)" ondrop="deviceDropped(event)">
 				</div>
-				<div id="devices">
+				<div class="panel panel-info">
+					<div class="panel-heading">Un-deployed devices<span id="devices_count" ></span></div>
+					<div class="panel-body">
+						<div id="devices">
 
+						</div>
+					</div>
 				</div>
+				
 			</div>
 			<div class="col-md-2">
 			</div>
 		</div>
 	</div>
 	<div id ="device" class="device" draggable="true" onclick = "showDeviceInfo(event)" ondragstart="dragStart(event)">
+
 	</div>
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Enter the MAD App instance Id</h4>
+				</div>
+				<div class="modal-body">
+					<input type="text" name="instanceID" id ="instanceID"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" onclick="updateInstanceId()">Enter</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
 </body>
 </html>
