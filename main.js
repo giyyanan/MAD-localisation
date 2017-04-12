@@ -101,6 +101,7 @@ var addDevices = function(){
 			cloneDiv.style.top = devices[device].location.coordinates.Y;
 			cloneDiv.style.position = 'absolute';
 			roomDiv.appendChild(cloneDiv);
+			
 			cloneDiv.innerHTML = material_icons[device_type];
 
 		}
@@ -108,6 +109,9 @@ var addDevices = function(){
 			devicesDiv.appendChild(cloneDiv);
 			devices_count[device_type] += 1;
 		}
+			$( "#"+String(device) ).fadeOut(1);
+			$( "#"+String(device) ).fadeIn(2000);
+
 	}
 	updateDeviceCount();
 
@@ -149,7 +153,7 @@ var deviceDropped = function(event){
 	event.stopPropagation();
 	updateDeviceLocation(deviceID);
 	device_type = device_store[deviceID].config[Object.keys(device_store[deviceID].config)[0]].hasOwnProperty("type") ? device_store[deviceID].config[Object.keys(device_store[deviceID].config)[0]].type : "NONE"
-	devices_count[device_type] -= 1;
+	devices_count[device_type] >0 ? devices_count[device_type]-= 1 : devices_count[device_type] =0;
 	updateDeviceCount();
 }
 var updateDeviceLocation = function(deviceID){
